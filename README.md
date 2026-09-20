@@ -18,3 +18,6 @@ Then it starts the cycle again.
 - Python 3
 - Tkinter
 
+## How to Use
+- Download main.py
+- Run it in terminal
