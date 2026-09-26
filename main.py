@@ -14,6 +14,17 @@ LONG_BREAK = 5 * 60  # 5 min long break
 # =========================
 
 def show_break(duration): #if duration is 3, it show the break screen for 3seconds
+
+	# Tell GNOME not to idle or suspend during the break
+    inhibitor = subprocess.Popen([
+        "gnome-session-inhibit",
+        "--inhibit", "idle:suspend",
+        "--reason", "20-20-20 break",
+        "--inhibit-only"
+    ])
+    #Popen means start another program/process
+    # inhibitor = subprocess.Popen([ "gnome-session-inhibit", means we are telling python to start gnome-session-inhibit
+	
     breakScreen = tk.Tk() #create the actual tkinter window 
 
     breakScreen.attributes("-fullscreen", True) #make the window full screen 
